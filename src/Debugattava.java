@@ -1,5 +1,3 @@
-
-
 public class Debugattava {
     private int alku;
 	public Debugattava(int i) { this.alku = i; }
@@ -19,6 +17,6 @@ public class Debugattava {
         int s = d.summa();
         int k = d.kertoma(3);
         System.out.println(s+" " +k);
-        assert s == 5: "Virhe";
+//        assert s == 5: "Virhe";
     }
 }
