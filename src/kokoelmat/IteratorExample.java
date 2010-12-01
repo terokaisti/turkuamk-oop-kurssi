@@ -2,6 +2,7 @@ package kokoelmat;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 
 public class IteratorExample {
@@ -48,6 +49,7 @@ public class IteratorExample {
 			Iterator<String> i = (Iterator<String>) c.iterator();
 			while(i.hasNext() && _add((String) i.next()));
 			return true;
+			
 		}
 		@Override
 		public void clear() {

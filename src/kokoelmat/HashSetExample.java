@@ -4,19 +4,35 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import sun.tools.tree.LengthExpression;
+
 import kokoelmat.HashcodeExample.Gender;
 import kokoelmat.HashcodeExample.P;
 
 /**
- * HashSet esimerkkejŠ
+ * HashSet on kokoelma joukolle olioita, joiden equals-metodi palauttaa falsen
+ * kaikille verrokkiolioille
  * 
  * @author tero
  *
  */
 public class HashSetExample {
+	class A {
+		public boolean equals(Object o) { return true; } // -> 1, false -> 3
+		public int hashCode() { return 1; } // remove -> aina 3
+	}
+	
 	public static void main(String args[]) {
 		duplicateLetters();
 		duplicatePersons();
+		
+		HashSet<A> ha = new HashSet<A>(Arrays.asList(
+				new HashSetExample().new A(), 
+				new HashSetExample().new A(), 
+				new HashSetExample().new A()
+			));
+		System.out.println(ha.size());
+		
 	}
 
 	private static void duplicatePersons() {
