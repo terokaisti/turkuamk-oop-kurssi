@@ -45,8 +45,7 @@ public class IteratorExample {
 		}
 		@Override
 		public boolean addAll(Collection<? extends String> c) {
-			Boolean b = true;
-			Iterator i = c.iterator();
+			Iterator<String> i = (Iterator<String>) c.iterator();
 			while(i.hasNext() && _add((String) i.next()));
 			return true;
 		}
